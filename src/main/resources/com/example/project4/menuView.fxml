@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="661.0" prefWidth="726.0" style="-fx-background-color: #C19A6B;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project4.MenuController">
+   <top>
+      <Label text="Cafe" textAlignment="CENTER" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Cookie-Regular" size="55.0" />
+         </font>
+      </Label>
+   </top>
+   <center>
+      <HBox prefHeight="584.0" prefWidth="726.0" style="-fx-spacing: 150;" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-translate-x: 20; -fx-spacing: 5;">
+               <children>
+                  <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#setUpDonut" prefHeight="229.0" prefWidth="228.0" text="Donuts">
+                     <graphic>
+                        <ImageView fx:id="delPic" fitHeight="152.0" fitWidth="218.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../../../images/donuts.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Cookie-Regular" size="21.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#setUpCoffee" prefHeight="244.0" prefWidth="272.0" text="Coffee">
+                     <graphic>
+                        <ImageView fx:id="pepPic" fitHeight="163.0" fitWidth="219.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../../../images/coffee1.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Cookie-Regular" size="21.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="469.0" prefWidth="287.0" style="-fx-spacing: 30; -fx-padding: 10;">
+               <children>
+                  <HBox />
+                  <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#showOrder" prefHeight="224.0" prefWidth="226.0" text="Ordering Basket">
+                     <graphic>
+                        <ImageView fitHeight="145.0" fitWidth="198.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../../../images/cart.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Cookie-Regular" size="21.0" />
+                     </font>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#showStoreOrders" prefHeight="221.0" prefWidth="224.0" text="Store Orders">
+                     <graphic>
+                        <ImageView fitHeight="133.0" fitWidth="180.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../../../images/beans.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Cookie-Regular" size="21.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </center>
+</BorderPane>
