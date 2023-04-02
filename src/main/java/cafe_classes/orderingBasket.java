@@ -6,29 +6,34 @@ import java.util.ArrayList;
 public class orderingBasket {
 
     /** When there are no items in order **/
-    public static final int EMPTY = 0;
-    /** The dollar format. **/
-    private static final String FORMAT = "##,##0.00";
-    /** Formatter that formats a number to the dollar format. **/
-    public static final DecimalFormat DECIMAL_FORMAT = new DecimalFormat(FORMAT);
+    //public static final int EMPTY = 0;
+
     /** Sales tax amount. **/
-    private static final double SALES_TAX = 0.06625;
+    private static final double SET_SALES_TAX = 0.06625;
+
     /** When an order is empty. **/
-    private static final double EMPTY_ORDER_TOTAL = 0.00;
+    private static final double EMPTY_ORDER = 0.00;
+
     /** List of items with the order. **/
     private ArrayList<Items> items;
+
+    /** The dollar format. **/
+    private static final String FORMAT = "##,##0.00";
+
+    /** Formatter that formats a number to the dollar format. **/
+    public static final DecimalFormat DECIMAL_FORMAT = new DecimalFormat(FORMAT);
+
     /** Current price of order. **/
     private double currentPrice;
 
 
     public orderingBasket() {
         this.items = new ArrayList<>();
-        this.currentPrice = EMPTY_ORDER_TOTAL;
+        this.currentPrice = EMPTY_ORDER;
     }
 
     /**
      * Gets the items in the order.
-     * @return The items in the order.
      */
     @Override
     public String toString() {
@@ -63,15 +68,13 @@ public class orderingBasket {
 
     /**
      * Calculates the total of the order with tax.
-     * @return The total of the order with tax applied.
      */
     public String getFinalPrice() {
-        return DECIMAL_FORMAT.format(currentPrice + currentPrice * SALES_TAX);
+        return DECIMAL_FORMAT.format(currentPrice + currentPrice * SET_SALES_TAX);
     }
 
     /**
      * Get the subtotal of order.
-     * @return subtotal
      */
     public String getSubtotal(){
         return DECIMAL_FORMAT.format(currentPrice);
@@ -79,23 +82,20 @@ public class orderingBasket {
 
     /**
      * Get the sales tax total of order.
-     * @return amount of sales tax
      */
     public String getTax(){
-        return DECIMAL_FORMAT.format(currentPrice * SALES_TAX);
+        return DECIMAL_FORMAT.format(currentPrice * SET_SALES_TAX);
     }
 
     /**
      * Get the list of donuts and coffee from order.
-     * @return list of donuts and coffee
      */
-    public ArrayList<Item> getPizzas() {
+    public ArrayList<Item> getItems() {
         return items;
     }
 
     /**
      * Get the amount of donuts and coffee in order.
-     * @return amount of items
      */
     public int size(){
         return items.size();

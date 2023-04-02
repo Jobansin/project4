@@ -5,9 +5,31 @@ import java.util.ArrayList;
 
 public class StoreOrders {
     /** The list of orders. **/
-    private ArrayList<orderingDonuts> orders;
+    private ArrayList<orderingItems> orders;
+
     /** Empty list of orders **/
-    public static final int EMPTY = 0;
+    //public static final int EMPTY = 0;
+
+    /**
+     * Adds an order to the list of orders.
+     */
+    public void addOrder(Order order) {
+        orders.add(order);
+    }
+
+    /**
+     * This method returns the ArrayList of orders.
+     */
+    public ArrayList<Order> getOrders() {
+        return orders;
+    }
+
+    /**
+     * This method removes an order from the list of orders.
+     */
+    public void removeOrder(int index) {
+        orders.remove(index);
+    }
 
     /**
      * Constructor for the StoreOrders class.
@@ -17,32 +39,7 @@ public class StoreOrders {
     }
 
     /**
-     * Adds an order to the list of orders.
-     * @param order The order to be added.
-     */
-    public void addOrder(Order order) {
-        orders.add(order);
-    }
-
-    /**
-     * This method removes an order from the list of orders.
-     * @param index The order to be removed.
-     */
-    public void removeOrder(int index) {
-        orders.remove(index);
-    }
-
-    /**
-     * This method returns the ArrayList of orders.
-     * @return the ArrayList of orders.
-     */
-    public ArrayList<Order> getOrders() {
-        return orders;
-    }
-
-    /**
-     * This method returns all the orders to a string separated by new lines.
-     * @return String with all the orders separated by new lines.
+     * This method returns all of the orders placed to a string which is separated by new lines.
      */
     @Override
     public String toString() {
@@ -54,8 +51,7 @@ public class StoreOrders {
     }
 
     /**
-     * This method saves the orders at the given file location.
-     * @param file the file to be edited
+     * This method saves the orders at the given file destination.
      */
     public void export(File file) {
         try {
@@ -73,16 +69,13 @@ public class StoreOrders {
 
     /**
      * Get order at a given index.
-     * @param index index value
-     * @return Order object at index
      */
     public Order getOrder(int index){
         return orders.get(index);
     }
 
     /**
-     * Get amount of orders currently placed.
-     * @return amount of orders
+     * Get the amount of orders that are currently placed.
      */
     public int getSize(){
         return orders.size();

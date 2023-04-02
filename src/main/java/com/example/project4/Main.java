@@ -5,11 +5,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
+
 public class Main extends Application {
     /**
-     * Sets up the main window.
-     * @param stage Menu window shown when application starts
-     * @throws IOException thrown for any IO error
+     * Sets up the starting window.
      */
     @Override
     public void start(Stage stage) throws IOException {
@@ -21,8 +20,7 @@ public class Main extends Application {
     }
 
     /**
-     * Launches application.
-     * @param args command line arguments
+     * Launches the application.
      */
     public static void main(String[] args) {
         launch();
